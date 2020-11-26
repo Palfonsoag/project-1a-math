@@ -1,6 +1,6 @@
 {
   "name": "project-1a-math",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple math project to build a nodejs package",
   "main": "index.js",
   "scripts": {
