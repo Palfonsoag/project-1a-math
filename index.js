@@ -7,7 +7,7 @@ module.exports = {
    * @param {*} n2 second number of the addition
    */
   add: function (n1, n2) {
-    return n1 + n2;
+    return this.inNumber(n1, n2) ? n1 + n2 : this.errorMessage();
   },
 
   /**
@@ -18,7 +18,7 @@ module.exports = {
    * @param {*} n2 second number of the subtraction
    */
   sub: function (n1, n2) {
-    return n1 - n2;
+    return this.inNumber(n1, n2) ? n1 - n2 : this.errorMessage();
   },
 
   /**
@@ -29,7 +29,7 @@ module.exports = {
    * @param {*} n2 second number of the multiplication
    */
   mul: function (n1, n2) {
-    return n1 * n2;
+    return this.inNumber(n1, n2) ? n1 * n2 : this.errorMessage();
   },
 
   /**
@@ -40,6 +40,23 @@ module.exports = {
    * @param {*} n2 second number of the division
    */
   div: function (n1, n2) {
-    return n1 / n2;
+    return this.inNumber(n1, n2) ? n1 / n2 : this.errorMessage();
+  },
+  /**
+   * ERROR MESSAGE that is print on console when one o both of the values are not a number
+   */
+  errorMessage: function () {
+    console.log("one or both values are not a number");
+  },
+  /**
+   * Type validation of the values
+   * @param {*} n1
+   * @param {*} n2
+   */
+  inNumber: function (n1, n2) {
+    if (typeof n1 !== "number" || typeof n2 !== "number") {
+      return false;
+    }
+    return true;
   },
 };
